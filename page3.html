@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1 – Aurora</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.2.2/dist/locomotive-scroll.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b0f1a;
+            color: #f5f5f5;
+            margin: 0;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hero {
+            position: relative;
+            width: calc(100% - 30px);
+            margin: 15px;
+            height: 60vh;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 26, 0.4);
+        }
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            text-align: center;
+            width: 90%;
+        }
+        .hero-content h1 {
+            font-size: clamp(32px, 8vw, 64px);
+            font-family: 'Playfair Display', serif;
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            font-size: 14px;
+        }
+        .post-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 40px 15px;
+            text-align: center;
+        }
+        .post-content h2 {
+            margin: 40px 0 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(24px, 5vw, 36px);
+        }
+        .post-content p {
+            line-height: 1.8;
+            color: #c3c9ff;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s ease-out;
+        }
+        .fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200" class="hero-image">
+        <div class="hero-content">
+            <h1 class="fade">The Future of Design</h1>
+        </div>
+        <a href="index.html" class="back-btn">Back to Home</a>
+    </section>
+    <section class="post-content">
+        <h2 class="fade">Lorem ipsum dolor</h2>
+        <p class="fade">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, ipsam quod recusandae dolor voluptatibus, perspiciatis fuga hic mollitia blanditiis, facilis illo impedit? Amet aspernatur dolorum aliquam beatae natus, quod praesentium?.</p>
+        <h2 class="fade">Innovation and Depth</h2>
+        <p class="fade">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, ipsam quod recusandae dolor voluptatibus, perspiciatis fuga hic mollitia blanditiis, facilis illo impedit? Amet aspernatur dolorum aliquam beatae natus, quod praesentium?.</p>
+    </section>
+    <script>
+        const observer=new IntersectionObserver(entries=>{
+            entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+        });
+        document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+    </script>
+</body>
+</html>

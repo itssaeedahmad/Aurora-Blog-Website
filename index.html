@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aurora — Demo Blog</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.2.2/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="bg"></canvas>
+    <header>
+        <div class="logo">Aurora</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="#posts">Posts</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Stories Beyond The Horizon</h1>
+            <p>A futuristic demo blog designed to feel alive, immersive and beautifully minimal. Scroll to explore glowing ideas, motion and depth.</p>
+            <button onclick="scrollToPosts()">Explore</button>
+        </div>
+    </section>
+    <section id="posts" class="section">
+        <div class="section-title">Latest Articles</div>
+        <div class="grid" id="postGrid"></div>
+    </section>
+    <div class="parallax">Dream • Create • Repeat</div>
+    <section id="about" class="section">
+        <div class="section-title">About This Experience</div>
+        <div class="about-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="newsletter">
+            <h2>Join The Journey</h2>
+            <div class="newsletter-form">
+                <input placeholder="Your email" />
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </section>
+    <footer>© 2026 Aurora Demo Blog — Designed for beauty.</footer>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.2.2/dist/locomotive-scroll.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

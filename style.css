@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #070b14;
+    color: #ffffff;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: calc(100% - 30px);
+    left: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(7, 11, 20, 0.7);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    border-radius: 0 0 15px 15px;
+}
+
+.logo {
+    font-family: 'Poppins', serif;
+    font-size: clamp(20px, 4vw, 26px);
+    letter-spacing: 2px;
+}
+
+nav a {
+    margin-left: clamp(15px, 3vw, 30px);
+    text-decoration: none;
+    color: #cfd6ff;
+    font-weight: 500;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: #7aa2ff;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 15px;
+    text-align: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: clamp(34px, 8vw, 68px);
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(90deg, #7aa2ff, #d6a4ff, #7afcff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: clamp(16px, 2.5vw, 19px);
+    color: #b9c1ff;
+    margin: 0 auto;
+}
+
+.hero button {
+    margin-top: 35px;
+    padding: 14px 34px;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #7aa2ff, #d6a4ff);
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.section {
+    padding: 80px 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title {
+    font-size: clamp(26px, 5vw, 40px);
+    font-family: 'Poppins', serif;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.parallax {
+    height: 40vh;
+    width: calc(100% - 30px);
+    margin: 0 15px;
+    background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000') center/cover fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(22px, 5vw, 48px);
+    font-family: 'Poppins', sans-serif;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 800px;
+    text-align: center;
+    color: #c3c9ff;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.newsletter {
+    background: linear-gradient(135deg, #111736, #1b2452);
+    border-radius: 25px;
+    padding: 50px 20px;
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(24px, 4vw, 32px);
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.newsletter input {
+    padding: 14px 20px;
+    border-radius: 30px;
+    border: none;
+    width: 100%;
+    max-width: 350px;
+}
+
+.newsletter button {
+    padding: 14px 40px;
+    border: none;
+    border-radius: 30px;
+    background: #7aa2ff;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+footer {
+    padding: 40px 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #8890ff;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(7, 11, 20, 0.95);
+        flex-direction: column;
+        padding: 20px;
+    }
+    nav.active {
+        display: flex;
+    }
+    nav a {
+        margin: 10px 0;
+    }
+}
